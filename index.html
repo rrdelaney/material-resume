@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Resume</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:500,200,700" rel="stylesheet">
+    <style>a,h1,h2,h3,h4,h5,h6,li,p{font-family:Raleway,sans-serif}.resume{background-color:#1f1f1f;min-height:100vh}.resume .main{height:100%;width:700px;background-color:#fff;padding:0 25px;margin:0 auto}.resume .main .header{border-bottom:2px solid #ddd}.resume .main .header .page-title-container{margin:0 auto;text-align:center;padding-bottom:10px}.resume .main .header .page-title{font-size:48pt;display:inline}.resume .main .header .page-title-first{font-weight:400}.resume .main .header .page-title-last{font-weight:200}.resume .main .header .header-icons{text-align:center}.resume .main .header .header-icons .page-subhead{margin:1rem 15px;display:inline}.resume .main .header .fa{padding-right:10px}.resume .main .indented{padding-left:40px}.resume .main .category-row{padding-bottom:2px}.resume .main .category-row .category{margin-right:10px;padding-left:5px;padding-right:10px;border-bottom:1px solid #ddd;border-right:1px solid #ddd}.resume .main .category-row .category-row-title{margin:.4rem 0}.resume .main .category-row .category-subtitle,.resume .main .category-row .category-title{display:inline;margin-top:10px;margin-bottom:5px}.resume .main .category-row .category-bullets{margin-top:5px}.resume .main .category-row li,.resume .main .category-row p{font-size:smaller}category:last-of-type category-item:last-of-type .category,sidebar-category:last-of-type .category{border-bottom:0!important;padding-bottom:0!important;margin-bottom:0!important}</style>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+    <script>"use strict";angular.module("Resume",["ngMaterial"]).directive("resume",function(){return{restrict:"E",transclude:!0,template:'<div class="resume">\n      <section class="main" ng-transclude></section>\n    </div>'}}).directive("resumeHeading",function(){return{restrict:"E",scope:{firstName:"@",lastName:"@",website:"@",phone:"@",email:"@",github:"@"},template:'<div class="header">\n      <div class="page-title-container">\n        <h1 class="page-title page-title-first">{{firstName}}</h1>\n        <h1 class="page-title page-title-last">{{lastName}}</h1>\n      </div>\n      <div class="header-icons">\n        <p ng-if="website" class="md-subhead page-subhead"><i class="fa fa-lg fa-code"></i>{{website}}</p>\n        <p ng-if="phone" class="md-subhead page-subhead"><i class="fa fa-lg fa-phone"></i>{{phone}}</p>\n        <p ng-if="email" class="md-subhead page-subhead"><i class="fa fa-lg fa-envelope"></i>{{email}}</p>\n        <p ng-if="github" class="md-subhead page-subhead"><i class="fa fa-lg fa-github"></i>{{github}}</p>\n      </div>\n    </div>'}}).directive("resumeBody",function(){return{restrict:"E",transclude:!0,template:'<div layout="row" ng-transclude></div>'}}).directive("resumeColumn",function(){return{restrict:"E",transclude:!0,template:"<div ng-transclude></div>"}}).directive("sidebarCategory",function(){return{restrict:"E",scope:{name:"@"},transclude:!0,template:'<div flex="" class="category-row">\n      <div class="category">\n        <h5 class="category-row-title">{{name}}</h5>\n        <ng-transclude></ng-transclude>\n      </div>\n    </div>'}}).directive("category",function(){return{restrict:"E",scope:{name:"@"},transclude:!0,template:'<div flex="" class="category-row">\n      <h4 class="category-row-title">{{name}}</h4>\n      <ng-transclude></ng-transclude>\n    </div>'}}).directive("categoryItem",function(){return{restrict:"E",scope:{title:"@",subtitle:"@"},transclude:!0,template:'<div class="category">\n        <h5 class="category-title md-body-2">{{title}}</h5>&nbsp;\n        <h5 class="category-subtitle md-caption">{{subtitle}}</h5>\n        <ul class="category-bullets" ng-transclude></ul>\n    </div>'}});</script>
+</head>
+
+<body ng-app="Resume" ng-cloak>
+    <resume>
+        <resume-heading first-name="Ryan" last-name="Delaney" website="rdel.io" email="rrdelaney@outlook.com" phone="516-281-6378" github="rrdelaney">
+        </resume-heading>
+        <resume-body>
+            <resume-column flex="20">
+                <sidebar-category name="Education">
+                    <p>Rensselaer Polytechnic Institute</p>
+                    <p>Graduating May 2016</p>
+                    <p>Computer Science</p>
+                    <p>Computer Systems Engineering</p>
+                    <p>GPA - 3.36</p>
+                </sidebar-category>
+                <sidebar-category name="Achievements">
+                    <p>2nd @ Facebook Global Hackathon</p>
+                    <p>HackMIT Finalist F2015</p>
+                    <p>Best UI @ HackMIT 2015</p>
+                    <p>Best Accenture Training Vision @ HopHacks F2015</p>
+                    <p>Rensselaer Medal Award</p>
+                </sidebar-category>
+                <sidebar-category name="Coursework">
+                    <p>Programming Languages</p>
+                    <p>Operating Systems</p>
+                    <p>Database Systems</p>
+                    <p>Foundations of Computer Science</p>
+                    <p>Data Structures</p>
+                    <p>Algorithms</p>
+                </sidebar-category>
+            </resume-column>
+            <resume-column flex="80">
+                <category name="Professional Experience">
+                    <category-item title="Senior Developer" subtitle="Rensselaer Union (Fall 2013 - Present)">
+                        <li>Working on a new Club Management System for the Student Union</li>
+                        <li>Work on a team with other developers managing workflow with Git</li>
+                        <li>Designed a responsive web app in collaboration with other developers to complete features and fix bugs</li>
+                    </category-item>
+                    <category-item title="Software Engineering Intern" subtitle="Datto (Summer 2015)">
+                        <li>Worked on devices that take image-based backups of servers</li>
+                        <li>Developed on an existing codebase to add new features and fix bugs</li>
+                        <li>Wrote unit tests and negative tests for all added features</li>
+                        <li>Worked in a scrum environment and used agile methods to complete goals</li>
+                    </category-item>
+                    <category-item title="Software Engineering Intern" subtitle="Power Management Concepts (Summer 2014)">
+                        <li>Developed API to run analytics on data from mission critical machines</li>
+                        <li>Predicted when machines would fail, need replacement, and need more power</li>
+                        <li>Project involved machine learning and predictive analytics on big data</li>
+                    </category-item>
+                </category>
+                <category name="Projects">
+                    <category-item title="Inquiry" subtitle="Facebook Hackathon Fall 2015 (2nd Place)">
+                        <li>Search tool for YouTube videos</li>
+                        <li>Searches images, audio, and text inside the video for information</li>
+                        <li>Developed using Clarifai, Tesseract OCR, and ffmpeg</li>
+                    </category-item>
+                    <category-item title="inCync" subtitle="HackMIT Fall 2015 (Finalist &amp; Best UX)">
+                        <li>App to help teams make presentations in sync</li>
+                        <li>Developed as a hybrid web app using Angular and Cordova</li>
+                    </category-item>
+                    <category-item title="Electronics Team Lead" subtitle="Rensselaer Electric Vehicle (Fall 2013 - Spring 2015)">
+                        <li>Designed, built, and tested electronics system for an all-electric car</li>
+                        <li>Managed the electrical team, including budgeting and design reviews</li>
+                    </category-item>
+                </category>
+                <category name="Skills">
+                    <category-item title="Web Development">
+                        <li><strong>UX</strong> Enjoy designing clean, responsive, and mobile UX</li>
+                        <li><strong>Distributed Systems</strong> Interested in designing concurrent &amp; parallel software</li>
+                        <li><strong>Tooling</strong> CI, static analysis, management tools, build tools, testing &amp; coverage</li>
+                        <li><strong>Frameworks</strong> Angular, React, Polymer</li>
+                    </category-item>
+                    <category-item title="Technologies">
+                        <li><strong>Experienced With</strong> Web &amp; Hybrid App Development \ Functional Programming</li>
+                        <li><strong>Programming</strong> Javascript \ Scala \ Python \ PHP \ C \ Java</li>
+                        <li><strong>Databases</strong> MongoDB \ MySQL \ PostgreSQL \ Redis</li>
+                    </category-item>
+                </category>
+            </resume-column>
+        </resume-body>
+    </resume>
+</body>
+
+</html>
