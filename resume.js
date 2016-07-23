@@ -19,7 +19,8 @@ angular.module('Resume', ['ngMaterial'])
       website: '@',
       phone: '@',
       email: '@',
-      github: '@'
+      github: '@',
+      linkedin: '@'
     },
     template: `<div class="header">
       <div class="page-title-container">
@@ -27,10 +28,11 @@ angular.module('Resume', ['ngMaterial'])
         <h1 class="page-title page-title-last">{{lastName}}</h1>
       </div>
       <div class="header-icons">
-        <p ng-if="website" class="md-subhead page-subhead"><i class="fa fa-lg fa-code"></i>{{website}}</p>
-        <p ng-if="phone" class="md-subhead page-subhead"><i class="fa fa-lg fa-phone"></i>{{phone}}</p>
-        <p ng-if="email" class="md-subhead page-subhead"><i class="fa fa-lg fa-envelope"></i>{{email}}</p>
-        <p ng-if="github" class="md-subhead page-subhead"><i class="fa fa-lg fa-github"></i>{{github}}</p>
+        <span ng-if="website" class="md-subhead page-subhead"><i class="fa fa-lg fa-code"></i>{{website}}</span>
+        <span ng-if="phone" class="md-subhead page-subhead"><i class="fa fa-lg fa-phone"></i>{{phone}}</span>
+        <span ng-if="email" class="md-subhead page-subhead"><i class="fa fa-lg fa-envelope"></i>{{email}}</span>
+        <span ng-if="github" class="md-subhead page-subhead"><i class="fa fa-lg fa-github"></i>{{github}}</span>
+        <span ng-if="linkedin" class="md-subhead page-subhead"><i class="fa fa-lg fa-linkedin-square"></i>{{linkedin}}</span>
       </div>
     </div>`
   }

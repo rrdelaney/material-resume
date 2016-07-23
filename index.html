@@ -14,83 +14,90 @@
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
-    <script>"use strict";angular.module("Resume",["ngMaterial"]).directive("resume",function(){return{restrict:"E",transclude:!0,template:'<div class="resume">\n      <section class="main" ng-transclude></section>\n    </div>'}}).directive("resumeHeading",function(){return{restrict:"E",scope:{firstName:"@",lastName:"@",website:"@",phone:"@",email:"@",github:"@"},template:'<div class="header">\n      <div class="page-title-container">\n        <h1 class="page-title page-title-first">{{firstName}}</h1>\n        <h1 class="page-title page-title-last">{{lastName}}</h1>\n      </div>\n      <div class="header-icons">\n        <p ng-if="website" class="md-subhead page-subhead"><i class="fa fa-lg fa-code"></i>{{website}}</p>\n        <p ng-if="phone" class="md-subhead page-subhead"><i class="fa fa-lg fa-phone"></i>{{phone}}</p>\n        <p ng-if="email" class="md-subhead page-subhead"><i class="fa fa-lg fa-envelope"></i>{{email}}</p>\n        <p ng-if="github" class="md-subhead page-subhead"><i class="fa fa-lg fa-github"></i>{{github}}</p>\n      </div>\n    </div>'}}).directive("resumeBody",function(){return{restrict:"E",transclude:!0,template:'<div layout="row" ng-transclude></div>'}}).directive("resumeColumn",function(){return{restrict:"E",transclude:!0,template:"<div ng-transclude></div>"}}).directive("sidebarCategory",function(){return{restrict:"E",scope:{name:"@"},transclude:!0,template:'<div flex="" class="category-row">\n      <div class="category">\n        <h5 class="category-row-title">{{name}}</h5>\n        <ng-transclude></ng-transclude>\n      </div>\n    </div>'}}).directive("category",function(){return{restrict:"E",scope:{name:"@"},transclude:!0,template:'<div flex="" class="category-row">\n      <h4 class="category-row-title">{{name}}</h4>\n      <ng-transclude></ng-transclude>\n    </div>'}}).directive("categoryItem",function(){return{restrict:"E",scope:{title:"@",subtitle:"@"},transclude:!0,template:'<div class="category">\n        <h5 class="category-title md-body-2">{{title}}</h5>&nbsp;\n        <h5 class="category-subtitle md-caption">{{subtitle}}</h5>\n        <ul class="category-bullets" ng-transclude></ul>\n    </div>'}});</script>
+    <!-- <script src="resume.js"></script> -->
+    <script>"use strict";angular.module("Resume",["ngMaterial"]).directive("resume",function(){return{restrict:"E",transclude:!0,template:'<div class="resume">\n      <section class="main" ng-transclude></section>\n    </div>'}}).directive("resumeHeading",function(){return{restrict:"E",scope:{firstName:"@",lastName:"@",website:"@",phone:"@",email:"@",github:"@",linkedin:"@"},template:'<div class="header">\n      <div class="page-title-container">\n        <h1 class="page-title page-title-first">{{firstName}}</h1>\n        <h1 class="page-title page-title-last">{{lastName}}</h1>\n      </div>\n      <div class="header-icons">\n        <span ng-if="website" class="md-subhead page-subhead"><i class="fa fa-lg fa-code"></i>{{website}}</span>\n        <span ng-if="phone" class="md-subhead page-subhead"><i class="fa fa-lg fa-phone"></i>{{phone}}</span>\n        <span ng-if="email" class="md-subhead page-subhead"><i class="fa fa-lg fa-envelope"></i>{{email}}</span>\n        <span ng-if="github" class="md-subhead page-subhead"><i class="fa fa-lg fa-github"></i>{{github}}</span>\n        <span ng-if="linkedin" class="md-subhead page-subhead"><i class="fa fa-lg fa-linkedin-square"></i>{{linkedin}}</span>\n      </div>\n    </div>'}}).directive("resumeBody",function(){return{restrict:"E",transclude:!0,template:'<div layout="row" ng-transclude></div>'}}).directive("resumeColumn",function(){return{restrict:"E",transclude:!0,template:"<div ng-transclude></div>"}}).directive("sidebarCategory",function(){return{restrict:"E",scope:{name:"@"},transclude:!0,template:'<div flex="" class="category-row">\n      <div class="category">\n        <h5 class="category-row-title">{{name}}</h5>\n        <ng-transclude></ng-transclude>\n      </div>\n    </div>'}}).directive("category",function(){return{restrict:"E",scope:{name:"@"},transclude:!0,template:'<div flex="" class="category-row">\n      <h4 class="category-row-title">{{name}}</h4>\n      <ng-transclude></ng-transclude>\n    </div>'}}).directive("categoryItem",function(){return{restrict:"E",scope:{title:"@",subtitle:"@"},transclude:!0,template:'<div class="category">\n        <h5 class="category-title md-body-2">{{title}}</h5>&nbsp;\n        <h5 class="category-subtitle md-caption">{{subtitle}}</h5>\n        <ul class="category-bullets" ng-transclude></ul>\n    </div>'}});</script>
 </head>
 
 <body ng-app="Resume" ng-cloak>
     <resume>
-        <resume-heading first-name="Ryan" last-name="Delaney" website="rdel.io" email="rrdelaney@outlook.com" phone="516-281-6378" github="rrdelaney">
+        <resume-heading first-name="Taylor"
+                        last-name="Swift"
+                        linkedin="tay-swizzy"
+                        github="tswizzle"
+                        email="taylor@swift.com"
+                        phone="123-456-7890">
         </resume-heading>
         <resume-body>
             <resume-column flex="20">
+                </sidebar-category>
                 <sidebar-category name="Education">
-                    <p>Rensselaer Polytechnic Institute</p>
+                    <p>Dankmeme Polytechic Institue</p>
                     <p>Graduating May 2016</p>
                     <p>Computer Science</p>
                     <p>Computer Systems Engineering</p>
-                    <p>GPA - 3.36</p>
+                    <p>GPA - 3.76</p>
                 </sidebar-category>
                 <sidebar-category name="Achievements">
-                    <p>2nd @ Facebook Global Hackathon</p>
-                    <p>HackMIT Finalist F2015</p>
-                    <p>Best UI @ HackMIT 2015</p>
-                    <p>Best Accenture Training Vision @ HopHacks F2015</p>
-                    <p>Rensselaer Medal Award</p>
+                    <p>Penn App Finalist Spring 2016</p>
+                    <P>Hophacks 2nd Place Spring 2016</p>
+                    <p>Dankmeme Achievement Medal 2016</p>
+                    <p>Dan Abromov's Top Follower 2016</p>
+                    <p>Advanced Regents Diploma</p>
                 </sidebar-category>
                 <sidebar-category name="Coursework">
-                    <p>Programming Languages</p>
-                    <p>Operating Systems</p>
-                    <p>Database Systems</p>
-                    <p>Foundations of Computer Science</p>
                     <p>Data Structures</p>
                     <p>Algorithms</p>
+                    <p>Programmings Langauges</p>
+                    <p>Operating Systems</p>
+                    <p>Distributed Systems</p>
+                    <p>Discrete Math</p>
                 </sidebar-category>
             </resume-column>
             <resume-column flex="80">
                 <category name="Professional Experience">
-                    <category-item title="Senior Developer" subtitle="Rensselaer Union (Fall 2013 - Present)">
-                        <li>Working on a new Club Management System for the Student Union</li>
-                        <li>Work on a team with other developers managing workflow with Git</li>
-                        <li>Designed a responsive web app in collaboration with other developers to complete features and fix bugs</li>
+                    <category-item title="Co-Founder" subtitle="Torch Studios">
+                        <li>Co-Founded company in 2015</li>
+                        <li>Applies machine learning to customer purchase history for marketing materials</li>
+                        <li>Featured on Product Hunt, clients include two Fourtune 500 companies</li>
                     </category-item>
-                    <category-item title="Software Engineering Intern" subtitle="Datto (Summer 2015)">
-                        <li>Worked on devices that take image-based backups of servers</li>
-                        <li>Developed on an existing codebase to add new features and fix bugs</li>
-                        <li>Wrote unit tests and negative tests for all added features</li>
-                        <li>Worked in a scrum environment and used agile methods to complete goals</li>
+                    <category-item title="Software Development Intern" subtitle="AirBnB (Summer 2015)">
+                        <li>Worked in an Agile Environment on the iOS team with other interns</li>
+                        <li>Used JIRA to collaborate with developers are on stories</li>
+                        <li>Collaborated with other interns on design</li>
+                        <li>Used Objective-C to create new app features and scaled on Kubernetes</li>
                     </category-item>
-                    <category-item title="Software Engineering Intern" subtitle="Power Management Concepts (Summer 2014)">
-                        <li>Developed API to run analytics on data from mission critical machines</li>
-                        <li>Predicted when machines would fail, need replacement, and need more power</li>
-                        <li>Project involved machine learning and predictive analytics on big data</li>
+                    <category-item title="Software Development Intern" subtitle="Uber (Summer 2014)">
+                        <li>Worked on the iOS application</li>
+                        <li>Added new features and fixed several bugs on the app</li>
+                        <li>Greenfield project to research a better way to call cars to your location</li>
                     </category-item>
                 </category>
                 <category name="Projects">
-                    <category-item title="Inquiry" subtitle="Facebook Hackathon Fall 2015 (2nd Place)">
-                        <li>Search tool for YouTube videos</li>
-                        <li>Searches images, audio, and text inside the video for information</li>
-                        <li>Developed using Clarifai, Tesseract OCR, and ffmpeg</li>
+                    <category-item title="In-It-For-The-Prizes" subtitle="Penn Apps Spring 2016 (Finalist)">
+                        <li>Such and amazing app that did a lot of things</li>
+                        <li>Integrations with Uber, Postmates, Spotify, and Office 365</li>
+                        <li>Written with Ionic Framework and hosted on Kubernetes 😎 for the cred</li>
                     </category-item>
-                    <category-item title="inCync" subtitle="HackMIT Fall 2015 (Finalist &amp; Best UX)">
-                        <li>App to help teams make presentations in sync</li>
-                        <li>Developed as a hybrid web app using Angular and Cordova</li>
+                    <category-item title="FoodStash" subtitle="Hophacks Spring 2016 (2nd Place)">
+                        <li>Food-storage-as-a-Service app that lets people put their food in your fridge</li>
+                        <li>All storage and payment in based on the blockchain with Ethereum and Mist</li>
                     </category-item>
-                    <category-item title="Electronics Team Lead" subtitle="Rensselaer Electric Vehicle (Fall 2013 - Spring 2015)">
-                        <li>Designed, built, and tested electronics system for an all-electric car</li>
-                        <li>Managed the electrical team, including budgeting and design reviews</li>
+                    <category-item title="Turnup" subtitle="github.com/tswizzle/turnup">
+                        <li>A new programming language with a focus on developers turning up</li>
+                        <li>Implemented in Go and requires Docker 1.12 with Ceph on CoreOS</li>
                     </category-item>
                 </category>
                 <category name="Skills">
                     <category-item title="Web Development">
-                        <li><strong>UX</strong> Enjoy designing clean, responsive, and mobile UX</li>
-                        <li><strong>Distributed Systems</strong> Interested in designing concurrent &amp; parallel software</li>
-                        <li><strong>Tooling</strong> CI, static analysis, management tools, build tools, testing &amp; coverage</li>
-                        <li><strong>Frameworks</strong> Angular, React, Polymer</li>
+                        <li><strong>Dank Memes</strong> I can find the deepest, dankest memes out there on the inerwebs</li>
+                        <li><strong>Distributed Systems</strong> I only run my apps on Kubernetes and a CoreOS cluster</li>
+                        <li><strong>Tooling</strong> I literally treat Dan Abromov's Twitter as holy gospel</li>
+                        <li><strong>Frameworks</strong> React, Redux, Reselect, Redankmeme, Revenant, Angular</li>
                     </category-item>
                     <category-item title="Technologies">
                         <li><strong>Experienced With</strong> Web &amp; Hybrid App Development \ Functional Programming</li>
                         <li><strong>Programming</strong> Javascript \ Scala \ Python \ PHP \ C \ Java</li>
-                        <li><strong>Databases</strong> MongoDB \ MySQL \ PostgreSQL \ Redis</li>
+                        <li><strong>Databases</strong> RethinkDB \ MongoDB \ MySQL \ PostgreSQL \ Redis</li>
                     </category-item>
                 </category>
             </resume-column>
