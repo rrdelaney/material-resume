@@ -2,7 +2,7 @@
 
 ## Getting Started
 
-1. Download the `(index.html)[https://github.com/rrdelaney/material-resume/blob/gh-pages/index.html]` file
+1. Download the [`index.html`](https://github.com/rrdelaney/material-resume/blob/gh-pages/index.html) file
 2. Open in your favorite editor
 3. Open document in chrome
 4. Start editing in the `<body>`
