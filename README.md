@@ -1,6 +1,6 @@
 # Material Resume
 
-## [Demo](rdel.io/material-resume)
+## [Demo](http://rdel.io/material-resume)
 
 ## Getting Started
 
