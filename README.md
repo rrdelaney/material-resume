@@ -1,5 +1,7 @@
 # Material Resume
 
+## [Demo](rdel.io/material-resume)
+
 ## Getting Started
 
 1. Download the [`index.html`](https://github.com/rrdelaney/material-resume/blob/gh-pages/index.html) file
