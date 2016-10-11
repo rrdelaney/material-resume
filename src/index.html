@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8" />
+<title>Resume</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Raleway:500,200,700" rel="stylesheet">
+<link href="resume.min.css" rel="stylesheet">
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+<script src="resume.min.js"></script>
+
+<body ng-app="Resume" ng-cloak>
+    <resume>
+        <resume-heading first-name="Taylor"
+                        last-name="Swift"
+                        linkedin="tay-swizzy"
+                        github="tswizzle"
+                        email="taylor@swift.com"
+                        phone="123-456-7890">
+        </resume-heading>
+        <resume-body>
+            <resume-column flex="20">
+                </sidebar-category>
+                <sidebar-category name="Education">
+                    <p>Dankmeme Polytechic Institue</p>
+                    <p>Graduating May 2016</p>
+                    <p>Computer Science</p>
+                    <p>Computer Systems Engineering</p>
+                    <p>GPA - 3.76</p>
+                </sidebar-category>
+                <sidebar-category name="Achievements">
+                    <p>Penn App Finalist Spring 2016</p>
+                    <P>Hophacks 2nd Place Spring 2016</p>
+                    <p>Dankmeme Achievement Medal 2016</p>
+                    <p>Dan Abromov's Top Follower 2016</p>
+                    <p>Advanced Regents Diploma</p>
+                </sidebar-category>
+                <sidebar-category name="Coursework">
+                    <p>Data Structures</p>
+                    <p>Algorithms</p>
+                    <p>Programmings Langauges</p>
+                    <p>Operating Systems</p>
+                    <p>Distributed Systems</p>
+                    <p>Discrete Math</p>
+                </sidebar-category>
+            </resume-column>
+            <resume-column flex="80">
+                <category name="Professional Experience">
+                    <category-item title="Co-Founder" subtitle="Torch Studios">
+                        <li>Co-Founded company in 2015</li>
+                        <li>Applies machine learning to customer purchase history for marketing materials</li>
+                        <li>Featured on Product Hunt, clients include two Fourtune 500 companies</li>
+                    </category-item>
+                    <category-item title="Software Development Intern" subtitle="AirBnB (Summer 2015)">
+                        <li>Worked in an Agile Environment on the iOS team with other interns</li>
+                        <li>Used JIRA to collaborate with developers are on stories</li>
+                        <li>Collaborated with other interns on design</li>
+                        <li>Used Objective-C to create new app features and scaled on Kubernetes</li>
+                    </category-item>
+                    <category-item title="Software Development Intern" subtitle="Uber (Summer 2014)">
+                        <li>Worked on the iOS application</li>
+                        <li>Added new features and fixed several bugs on the app</li>
+                        <li>Greenfield project to research a better way to call cars to your location</li>
+                    </category-item>
+                </category>
+                <category name="Projects">
+                    <category-item title="In-It-For-The-Prizes" subtitle="Penn Apps Spring 2016 (Finalist)">
+                        <li>Such and amazing app that did a lot of things</li>
+                        <li>Integrations with Uber, Postmates, Spotify, and Office 365</li>
+                        <li>Written with Ionic Framework and hosted on Kubernetes 😎 for the cred</li>
+                    </category-item>
+                    <category-item title="FoodStash" subtitle="Hophacks Spring 2016 (2nd Place)">
+                        <li>Food-storage-as-a-Service app that lets people put their food in your fridge</li>
+                        <li>All storage and payment in based on the blockchain with Ethereum and Mist</li>
+                    </category-item>
+                    <category-item title="Turnup" subtitle="github.com/tswizzle/turnup">
+                        <li>A new programming language with a focus on developers turning up</li>
+                        <li>Implemented in Go and requires Docker 1.12 with Ceph on CoreOS</li>
+                    </category-item>
+                </category>
+                <category name="Skills">
+                    <category-item title="Web Development">
+                        <li><strong>Dank Memes</strong> I can find the deepest, dankest memes out there on the inerwebs</li>
+                        <li><strong>Distributed Systems</strong> I only run my apps on Kubernetes and a CoreOS cluster</li>
+                        <li><strong>Tooling</strong> I literally treat Dan Abromov's Twitter as holy gospel</li>
+                        <li><strong>Frameworks</strong> React, Redux, Reselect, Redankmeme, Revenant, Angular</li>
+                    </category-item>
+                    <category-item title="Technologies">
+                        <li><strong>Experienced With</strong> Web &amp; Hybrid App Development \ Functional Programming</li>
+                        <li><strong>Programming</strong> Javascript \ Scala \ Python \ PHP \ C \ Java</li>
+                        <li><strong>Databases</strong> RethinkDB \ MongoDB \ MySQL \ PostgreSQL \ Redis</li>
+                    </category-item>
+                </category>
+            </resume-column>
+        </resume-body>
+    </resume>
+</body>
+</html>

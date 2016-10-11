@@ -1,19 +1,14 @@
 angular.module('Resume', ['ngMaterial'])
 
-.directive('resume', function() {
-  return {
-    restrict: 'E',
+.component('resume', {
     transclude: true,
     template: `<div class="resume">
       <section class="main" ng-transclude></section>
     </div>`
-  }
 })
 
-.directive('resumeHeading', function() {
-  return {
-    restrict: 'E',
-    scope: {
+.component('resumeHeading', {
+    bindings: {
       firstName: '@',
       lastName: '@',
       website: '@',
@@ -35,29 +30,20 @@ angular.module('Resume', ['ngMaterial'])
         <span ng-if="linkedin" class="md-subhead page-subhead"><i class="fa fa-lg fa-linkedin-square"></i>{{linkedin}}</span>
       </div>
     </div>`
-  }
 })
 
-.directive('resumeBody', function() {
-  return {
-    restrict: 'E',
+.component('resumeBody', {
     transclude: true,
     template: `<div layout="row" ng-transclude></div>`
-  }
 })
 
-.directive('resumeColumn', function() {
-  return {
-    restrict: 'E',
+.component('resumeColumn', {
     transclude: true,
     template: `<div ng-transclude></div>`
-  }
 })
 
-.directive('sidebarCategory', function() {
-  return {
-    restrict: 'E',
-    scope: {
+.component('sidebarCategory', {
+    bindings: {
       name: '@'
     },
     transclude: true,
@@ -67,13 +53,10 @@ angular.module('Resume', ['ngMaterial'])
         <ng-transclude></ng-transclude>
       </div>
     </div>`
-  }
 })
 
-.directive('category', function() {
-  return {
-    restrict: 'E',
-    scope: {
+.component('category', {
+    bindings: {
       name: '@'
     },
     transclude: true,
@@ -81,13 +64,10 @@ angular.module('Resume', ['ngMaterial'])
       <h4 class="category-row-title">{{name}}</h4>
       <ng-transclude></ng-transclude>
     </div>`
-  }
 })
 
-.directive('categoryItem', function() {
-  return {
-    restrict: 'E',
-    scope: {
+.component('categoryItem', {
+    bindings: {
       title: '@',
       subtitle: '@'
     },
@@ -97,5 +77,4 @@ angular.module('Resume', ['ngMaterial'])
         <h5 class="category-subtitle md-caption">{{subtitle}}</h5>
         <ul class="category-bullets" ng-transclude></ul>
     </div>`
-  }
 })

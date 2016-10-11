@@ -1,0 +1,27 @@
+{
+  "name": "material-resume",
+  "version": "1.0.0",
+  "description": "A cool resume template",
+  "scripts": {
+    "build:js": "buble src/resume.js | uglifyjs > src/resume.min.js",
+    "build:css": "cssmin src/resume.css > src/resume.min.css",
+    "build:html": "vulcanize index.html -p src --inline-scripts --inline-css > index.html",
+    "build": "npm run build:js && npm run build:css && npm run build:html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rrdelaney/material-resume"
+  },
+  "author": "Ryan Delaney <rrdelaney@outlook.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rrdelaney/material-resume/issues"
+  },
+  "homepage": "https://github.com/rrdelaney/material-resume",
+  "devDependencies": {
+    "buble": "^0.14.0",
+    "cssmin": "^0.4.3",
+    "uglify-js": "^2.7.3",
+    "vulcanize": "^1.14.8"
+  }
+}

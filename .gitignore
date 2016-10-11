@@ -1,0 +1,3 @@
+src/*.min.*
+*.log
+node_modules/
