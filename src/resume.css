@@ -1,5 +1,5 @@
-h1, h2, h3, h4, h5, h6, p, a, li {
-  font-family: 'Raleway', sans-serif;
+h1, h2, h3, h4, h5, h6, p, a, li, span {
+  font-family: 'Operator Pro', 'Raleway', sans-serif;
 }
 
 .resume {
@@ -57,12 +57,14 @@ h1, h2, h3, h4, h5, h6, p, a, li {
 .resume .main .category-row .category-row-title {
   margin: 0.4rem 0;
 }
+
 .resume .main .category-row .category-title,
 .resume .main .category-row .category-subtitle {
   display: inline;
   margin-top: 10px;
   margin-bottom: 5px;
 }
+
 .resume .main .category-row .category-bullets {
   margin-top: 5px;
 }
@@ -70,11 +72,13 @@ h1, h2, h3, h4, h5, h6, p, a, li {
 .resume .main .category-row li {
   font-size: smaller;
 }
+
 sidebar-category:last-of-type .category {
   border-bottom: 0 !important;
   padding-bottom: 0 !important;
   margin-bottom: 0 !important;
 }
+
 category:last-of-type category-item:last-of-type .category {
   border-bottom: 0 !important;
   padding-bottom: 0 !important;
