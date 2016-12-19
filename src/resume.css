@@ -1,5 +1,5 @@
 h1, h2, h3, h4, h5, h6, p, a, li, span {
-  font-family: 'Operator Pro', 'Raleway', sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 
 .resume {
@@ -83,4 +83,9 @@ category:last-of-type category-item:last-of-type .category {
   border-bottom: 0 !important;
   padding-bottom: 0 !important;
   margin-bottom: 0 !important;
+}
+
+a.page-subhead {
+  color: initial;
+  text-decoration: none;
 }

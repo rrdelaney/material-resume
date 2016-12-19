@@ -24,11 +24,21 @@ angular.module('Resume', ['ngMaterial'])
       <h1 class="page-title page-title-last">{{r.lastName}}</h1>
     </div>
     <div class="header-icons">
-      <span ng-if="r.website" class="md-subhead page-subhead"><i class="fa fa-lg fa-code"></i>{{r.website}}</span>
-      <span ng-if="r.phone" class="md-subhead page-subhead"><i class="fa fa-lg fa-phone"></i>{{r.phone}}</span>
-      <span ng-if="r.email" class="md-subhead page-subhead"><i class="fa fa-lg fa-envelope"></i>{{r.email}}</span>
-      <span ng-if="r.github" class="md-subhead page-subhead"><i class="fa fa-lg fa-github"></i>{{r.github}}</span>
-      <span ng-if="r.linkedin" class="md-subhead page-subhead"><i class="fa fa-lg fa-linkedin-square"></i>{{r.linkedin}}</span>
+      <a ng-if="r.website" class="md-subhead page-subhead" ng-href="https://{{r.website}}" target="_blank">
+        <i class="fa fa-lg fa-code"></i>{{r.website}}
+      </a>
+      <span ng-if="r.phone" class="md-subhead page-subhead">
+        <i class="fa fa-lg fa-phone"></i>{{r.phone}}
+      </span>
+      <a ng-if="r.email" class="md-subhead page-subhead" ng-href="mailto:{{r.email}}" target="_blank">
+        <i class="fa fa-lg fa-envelope"></i>{{r.email}}
+      </a>
+      <a ng-if="r.github" class="md-subhead page-subhead" ng-href="https://github.com/{{r.github}}" target="_blank">
+        <i class="fa fa-lg fa-github"></i>{{r.github}}
+      </a>
+      <a ng-if="r.linkedin" class="md-subhead page-subhead" ng-href="https://linkedin.com/in/{{r.linkedin}}" target="_blank">
+        <i class="fa fa-lg fa-linkedin-square"></i>{{r.linkedin}}
+      </a>
     </div>
   </div>`
 })
