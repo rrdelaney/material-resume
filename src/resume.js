@@ -9,6 +9,7 @@ angular.module('Resume', ['ngMaterial'])
 
 .component('resumeHeading', {
   controllerAs: 'r',
+  transclude: true,
   bindings: {
     firstName: '@',
     lastName: '@',
@@ -40,7 +41,8 @@ angular.module('Resume', ['ngMaterial'])
         <i class="fa fa-lg fa-linkedin-square"></i>{{r.linkedin}}
       </a>
     </div>
-  </div>`
+  </div>
+  <ng-transclude></ng-transclude>`
 })
 
 .component('resumeBody', {
