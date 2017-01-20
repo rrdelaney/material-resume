@@ -1,0 +1,15 @@
+language: node_js
+
+node_js: stable
+
+after_success:
+  - npm run build
+
+deploy:
+  provider: npm
+  email: "rrdelaney@outlook.com"
+  api_key: $NPM_TOKEN
+  skip_cleanup: true
+  on:
+    branch: master
+    condition: $(npm view material-resume dist-tags.latest) != $(node -p "require('./package.json').version")

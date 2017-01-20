@@ -5,7 +5,8 @@
   "scripts": {
     "build:js": "buble src/resume.js | uglifyjs > resume.min.js",
     "build:css": "cssmin src/resume.css > resume.min.css",
-    "build": "npm run build:js && npm run build:css"
+    "build": "npm run build:js && npm run build:css",
+    "test": "standard src/resume.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,12 @@
   "devDependencies": {
     "buble": "^0.14.0",
     "cssmin": "^0.4.3",
+    "standard": "^8.6.0",
     "uglify-js": "^2.7.3"
+  },
+  "standard": {
+    "global": [
+      "angular"
+    ]
   }
 }
