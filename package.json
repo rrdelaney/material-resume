@@ -1,12 +1,11 @@
 {
   "name": "material-resume",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A cool resume template",
   "scripts": {
-    "build:js": "buble src/resume.js | uglifyjs > src/resume.min.js",
-    "build:css": "cssmin src/resume.css > src/resume.min.css",
-    "build:html": "vulcanize index.html -p src --inline-scripts --inline-css > index.html",
-    "build": "npm run build:js && npm run build:css && npm run build:html"
+    "build:js": "buble src/resume.js | uglifyjs > resume.min.js",
+    "build:css": "cssmin src/resume.css > resume.min.css",
+    "build": "npm run build:js && npm run build:css"
   },
   "repository": {
     "type": "git",
@@ -21,7 +20,6 @@
   "devDependencies": {
     "buble": "^0.14.0",
     "cssmin": "^0.4.3",
-    "uglify-js": "^2.7.3",
-    "vulcanize": "^1.14.8"
+    "uglify-js": "^2.7.3"
   }
 }
