@@ -2,6 +2,13 @@
 
 ## [Demo](http://rdel.io/material-resume)
 
+## Latest versions
+
+```html
+<link href="https://unpkg.com/material-resume@1.0.1/resume.min.css" rel="stylesheet">
+<script src="https://unpkg.com/material-resume@1.0.1/resume.min.js"></script>
+```
+
 ## Getting Started
 
 1. Download the [`index.html`](https://github.com/rrdelaney/material-resume/blob/gh-pages/index.html) file
@@ -160,3 +167,8 @@ __Example__:
   </category-item>   
 </category>
 ```
+
+## Updating
+
+To update this resume to a newer version, copy the `<link>` and `<script>`
+tags you see at the top of this file and replace lines 13 and 14 with them.
