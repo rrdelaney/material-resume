@@ -1,6 +1,6 @@
 # Material Resume
 
-## [Demo](http://rdel.io/material-resume)
+## [Demo](https://rrdelaney.github.io/material-resume/)
 
 ## Latest versions
 
